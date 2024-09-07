@@ -13,9 +13,35 @@ export default function NavBar() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  document.documentElement.classList.add("dark");
+
+  // const [theme, setTheme] = useState("light");
+
+  // useEffect(() => {
+
+  //   const savedTheme = localStorage.getItem("theme") || "light";
+  //   setTheme(savedTheme);
+
+  //   if (savedTheme === "dark") {
+  //     document.documentElement.classList.add("dark");
+  //   } else {
+  //     document.documentElement.classList.remove("dark");
+  //   }
+  // }, []);
+
+  // const toggleTheme = () => {
+  //   const newTheme = theme === "light" ? "dark" : "light";
+  //   setTheme(newTheme);
+  //   if (newTheme === "dark") {
+  //     document.documentElement.classList.add("dark");
+  //   } else {
+  //     document.documentElement.classList.remove("dark");
+  //   }
+  //   localStorage.setItem("theme", newTheme); 
+  // };
 
   return (
-    <div className={`bg-[#030714] fixed top-0 start-0 end-0 py-4 shadow-lg z-50 max-md:py-5`} >
+    <div className={`dark:bg-[#030714] bg-gray-100 shadow-lg fixed top-0 start-0 end-0 py-3 z-50 max-md:py-5`} >
       <div className='w-[80%] mx-auto text-white flex justify-between items-center'>
 
         <div className='flex items-center gap-3'>
@@ -28,8 +54,8 @@ export default function NavBar() {
 
           <div>
 
-            <h2 className='font-semibold max-md:text-sm'>Omar Sabry</h2>
-            <h2 className='text-[#FFC400] font-semibold max-md:text-sm text-sm'>Frontend Developer</h2>
+            <h2 className='font-semibold dark:text-white text-[#070B18] max-md:text-sm'>Omar Sabry</h2>
+            <h2 className='dark:text-[#FFC400] text-[#6032CC]  font-semibold max-md:text-sm text-sm'>Frontend Developer</h2>
           </div>
         </div>
 
@@ -40,6 +66,13 @@ export default function NavBar() {
           </svg>
         </button>
 
+        {/* <button
+          className="px-4 py-2 rounded-md focus:outline-none bg-gray-200 dark:bg-gray-800 dark:text-white"
+          onClick={toggleTheme}
+
+        >
+          Switch to {theme === "light" ? "Dark" : "Light"} Mode
+        </button> */}
 
 
 
@@ -47,7 +80,8 @@ export default function NavBar() {
 
 
 
-        <ul className={`md:flex items-center gap-6 hidden ${isMenuOpen ? 'block' : 'hidden'} mt-4 md:mt-0`}>
+
+        <ul className={`md:flex items-center text-[#070B18] dark:text-white gap-6 hidden ${isMenuOpen ? 'block' : 'hidden'} mt-4 md:mt-0`}>
           <li>
             <NavLink className="duration-300 hover:text-[#8C5EF6]" onClick={() => {
 

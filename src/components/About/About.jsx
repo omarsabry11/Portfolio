@@ -59,31 +59,6 @@ export default function About() {
 
             </div>
 
-            {/* <li className='flex flex-wrap justify-center items-center gap-2'>
-                <span className='font-semibold text-lg text-[#e8d8a2]'><i className=" fa-solid fa-cake-candles"></i> Birth: </span>
-                <span className='text-[1.1rem] font-semibold'>January 11, 2004</span>
-              </li>
-              <li className='flex flex-wrap justify-center items-center gap-2'>
-                <span className='font-semibold text-lg text-[#e8d8a2]'><i className=" fa-solid fa-graduation-cap"></i> College: </span>
-                <span className='text-[1.1rem] font-semibold'>Faculty of engineering</span>
-              </li>
-              <li className='flex flex-wrap justify-center items-center gap-2'>
-                <span className='font-semibold text-lg text-[#e8d8a2]'><i className=" fa-solid fa-building-columns"></i> University: </span>
-                <span className='text-[1.1rem] font-semibold'>Alexandria university</span>
-              </li>
-              <li className='flex flex-wrap justify-center items-center gap-2'>
-                <span className='font-semibold text-lg text-[#e8d8a2]'><i className=" fa-solid fa-gear"></i> Department: </span>
-                <span className='text-[1.1rem] font-semibold'>Production engineering</span>
-              </li>
-              <li className='flex flex-wrap justify-center items-center gap-2'>
-                <span className='font-semibold text-lg text-[#e8d8a2]'> <i className=" fa-regular fa-envelope"></i> Email: </span>
-                <span className='text-[1.1rem] font-semibold'>omarsabry425@gmail.com</span>
-              </li>
-              <li className='flex flex-wrap justify-center items-center gap-2'>
-                <span className='font-semibold text-lg text-[#e8d8a2]'><i className=" fa-solid fa-phone"></i> Phone: </span>
-                <span className='text-[1.1rem] font-semibold'>01286183936</span>
-              </li> */}
-
 
 
             <motion.ul
@@ -115,7 +90,7 @@ export default function About() {
 
           <motion.div initial={{x:250, opacity:0}} animate={{x:0,opacity:1}} transition={{duration:0.7}} className='w-[52%] max-xl:w-full  flex  justify-center'>
 
-            <div className='flex flex-col gap-8 items-center relative py-12'>
+            <div className='flex flex-col gap-8 items-center relative py-12  ms-3'>
               <div className='neon-bg w-2 h-full absolute start-1/2 -translate-x-[50%] bottom-0 rounded-full -ms-[0.5rem]'>
 
 
