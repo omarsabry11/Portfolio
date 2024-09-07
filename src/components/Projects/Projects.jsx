@@ -29,7 +29,7 @@ export default function Projects() {
 
 
     <div className='min-h-lvh bg-[#030714fb] overflow-auto'>
-      <div className='w-[80%] max-sm:w-[90%] mx-auto mt-32 text-white'>
+      <div className='w-[80%] max-sm:w-[90%] mx-auto mt-32 text-white h-full'>
 
 
         <ul className='flex justify-center items-center gap-10 flex-wrap max-md:gap-4'>

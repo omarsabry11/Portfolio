@@ -9,11 +9,13 @@ import { motion } from 'framer-motion'
 export default function HtmlProjects() {
   const images = [Kasber, Template3, Fokir];
   return (<>
- 
+
+
+
     <div className='z-30 relative'>
 
 
-      <motion.div initial={{opacity:0,scale:0.8}} animate={{opacity:1,scale:1}} transition={{duration:0.5,delay:0.1}} className='flex flex-wrap justify-start items-center'>
+      <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.1 }} className='flex flex-wrap justify-start items-center'>
         {images.map((img, index) =>
 
           <div key={index} className='w-1/3 p-3 max-lg:w-1/2 max-md:w-full'>
