@@ -9,7 +9,19 @@ import { motion } from 'framer-motion'
 
 export default function JsProjects() {
 
-  const images = [XO, GameReviwes, Weather];
+  const images = [
+    
+    {src:XO,
+      link:"https://omarsabry11.github.io/XO-Game/"
+    },
+    {src:GameReviwes,
+      link:" https://omarsabry11.github.io/Game-Reviews/"
+    },
+    {src:Weather,
+      link:"https://omarsabry11.github.io/Weather/"
+    },
+  
+  ];
 
   return (<>
     <div className='z-30 relative'>
@@ -19,8 +31,8 @@ export default function JsProjects() {
 
           <div key={index} className='w-1/3 p-3 max-lg:w-1/2 max-md:w-full'>
             <div className='p-2 rounded-lg hover:scale-110 duration-300'>
-              <a target='_blank' href='https://todo-list-app-git-master-omarsabry11s-projects.vercel.app/'>
-                <img className='rounded-lg ' src={img} alt="" />
+              <a target='_blank' href={img.link}>
+                <img className='rounded-lg ' src={img.src} alt="" />
               </a>
 
             </div>

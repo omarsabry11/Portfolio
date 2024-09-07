@@ -6,7 +6,15 @@ import { motion } from 'framer-motion'
 
 export default function ReactProjects() {
 
-  const images = [Todo];
+  
+  const images = [
+    
+    {src:Todo,
+      link:"https://todo-list-app-git-master-omarsabry11s-projects.vercel.app/"
+    }
+  
+  
+  ];
 
   return (<>
   
@@ -17,8 +25,8 @@ export default function ReactProjects() {
 
           <div key={index} className='w-1/3 p-3 max-lg:w-1/2 max-md:w-full'>
             <div className='p-2 rounded-lg hover:scale-110 duration-300'>
-              <a target='_blank' href='https://todo-list-app-git-master-omarsabry11s-projects.vercel.app/'>
-                <img className='rounded-lg ' src={img} alt="" loading='la' />
+              <a target='_blank' href={img.link}>
+                <img className='rounded-lg ' src={img.src} alt="" loading='la' />
               </a>
 
             </div>

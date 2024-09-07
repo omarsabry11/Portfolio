@@ -17,7 +17,30 @@ import { motion } from 'framer-motion'
 export default function AllProjects() {
 
 
-  const images = [Todo, XO, GameReviwes, Weather, Kasber, Template3, Fokir];
+  // const images = [Todo, XO, GameReviwes, Weather, Kasber, Template3, Fokir];
+  const images = [
+    {src:Todo,
+      link:"https://todo-list-app-git-master-omarsabry11s-projects.vercel.app/"
+    },
+    {src:XO,
+      link:"https://omarsabry11.github.io/XO-Game/"
+    },
+    {src:GameReviwes,
+      link:" https://omarsabry11.github.io/Game-Reviews/"
+    },
+    {src:Weather,
+      link:"https://omarsabry11.github.io/Weather/"
+    },
+    {src:Kasber,
+      link:"https://omarsabry11.github.io/Kasber-web-site/"
+    },
+    {src:Template3,
+      link:"https://omarsabry11.github.io/Gallery/"
+    },
+    {src:Fokir,
+      link:"https://omarsabry11.github.io/Fokir/"
+    },
+  ];
 
 
   return (<>
@@ -30,8 +53,8 @@ export default function AllProjects() {
 
           <div key={index} className='w-1/3 p-3 max-lg:w-1/2 max-md:w-full'>
             <div className='p-2 rounded-lg hover:scale-110 duration-300'>
-              <a target='_blank' href='https://todo-list-app-git-master-omarsabry11s-projects.vercel.app/'>
-                <img className='rounded-lg ' src={img} alt=""  />
+              <a target='_blank' href={img.link}>
+                <img className='rounded-lg ' src={img.src} alt=""  />
               </a>
 
             </div>
