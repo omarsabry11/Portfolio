@@ -21,7 +21,7 @@ export default function Home() {
 
 
   const typewriterRef = useRef(null);
-  
+
   useEffect(() => {
 
     if (typewriterRef.current) {
@@ -38,7 +38,7 @@ export default function Home() {
   }, []);
 
 
-  
+
 
 
 
@@ -57,8 +57,8 @@ export default function Home() {
 
     <div className='min-h-lvh dark:bg-[#030714fb] bg-gray-100 overflow-auto flex items-center max-lg:py-[100px] border-[3px] border-[#150c2d] overflow-x-hidden'>
 
-      <motion.div  className='w-[80%] max-md:w-[95%] mx-auto mt-20 text-white flex justify-between items-center max-lg:gap-4 max-lg:flex-col max-lg:justify-center z-30 max-lg:text-center '>
-        <motion.div initial={{x:-250, opacity:0}} animate={{x:0,opacity:1}} transition={{duration:0.7}}  className='w-[55%] max-lg:order-1 max-lg:w-[90%]'>
+      <motion.div className='w-[80%] max-md:w-[95%] mx-auto mt-20 text-white flex justify-between items-center max-lg:gap-4 max-lg:flex-col max-lg:justify-center z-30 max-lg:text-center '>
+        <motion.div initial={{ x: -250, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.7 }} className='w-[55%] max-lg:order-1 max-lg:w-[90%]'>
           <div className='text-5xl max-lg:justify-center font-[800] tracking-wider py-6 flex items-center gap-2'>
 
             <h1 className=' dark:text-[#8C5EF6] text-[#6032cc]' ref={typewriterRef}></h1>
@@ -79,18 +79,21 @@ export default function Home() {
               </button>
             </motion.button>
 
-            <motion.button whileTap={{ scale: 0.85 }}>
-              <button className='text-[1.1rem] duration-[0.4s] dark:hover:bg-[#FFC400] dark:hover:border-[#FFC400] hover:bg-[#040814] hover:text-white dark:hover:text-white border-[3px] border-[#060A16] text-[#060A16] dark:border-[#FFC400] dark:text-[#FFC400] px-7 py-2 rounded-full font-semibold'>
-                <Link>
-                  Download cv
-                </Link>
-              </button>
+
+            <motion.button whileTap={{ scale: 0.85 }} className='text-[1.1rem] duration-[0.4s] dark:hover:bg-[#FFC400] dark:hover:border-[#FFC400] hover:bg-[#040814] hover:text-white dark:hover:text-white border-[3px] border-[#060A16] text-[#060A16] dark:border-[#FFC400] dark:text-[#FFC400] px-7 py-2 rounded-full font-semibold'>
+              <a href="/cv.pdf" className='w-full h-full block' download="Omar-Sabry-CV.pdf">
+                Download cv
+              </a>
             </motion.button>
+
+
+
+
           </div>
 
 
         </motion.div>
-        <motion.div initial={{x:250, opacity:0}} animate={{x:0,opacity:1}} transition={{duration:0.7}} className='w-[35%] max-lg:w-[65%]'>
+        <motion.div initial={{ x: 250, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.7 }} className='w-[35%] max-lg:w-[65%]'>
           <div className=''>
             <img src={HomeImage3} className='w-full h-full rounded-full shadow-xl ' alt="" />
 
