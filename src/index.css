@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.active {
+    color: #FFC400;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.projects-nav.active {
+    background-color: #FFC400;
+    color: white;
+    border: none;
+}
+
+.front-text,
+.myName {
+    color: #FFC400;
+}
+
+* {
+    /* font-family: "Rubik", sans-serif; */
+    font-family: "Plus Jakarta Sans", sans-serif;
+
+}
+
+@media (min-width:1024px) {
+
+    .home-text {
+        width: 90%;
+    }
+
+
+}
+
+/* .neon-bg {
+    background-color: #8D5EF5;
+   
+    box-shadow: 0 0 10px rgba(141, 94, 245, 0.8),
+        0 0 5px rgba(141, 94, 245, 0.8),
+        0 0 30px rgba(141, 94, 245, 0.8),
+        0 0 20px rgba(141, 94, 245, 0.8);
+    border-radius: 8px;
+ 
+} */
+
+.neon-bg {
+    background-color: #FFC400;
+
+    box-shadow: 0 0 5px rgba(255, 196, 0, 0.8),
+        0 0 10px rgba(255, 196, 0, 0.8),
+        0 0 40px rgba(255, 196, 0, 0.8);
+    border-radius: 8px;
+
+}
