@@ -81,7 +81,7 @@ export default function Home() {
 
 
             <motion.button whileTap={{ scale: 0.85 }} className='text-[1.1rem] duration-[0.4s] dark:hover:bg-[#FFC400] dark:hover:border-[#FFC400] hover:bg-[#040814] hover:text-white dark:hover:text-white border-[3px] border-[#060A16] text-[#060A16] dark:border-[#FFC400] dark:text-[#FFC400] px-7 py-2 rounded-full font-semibold'>
-              <a href="/cv.pdf" className='w-full h-full block' download="Omar-Sabry-CV.pdf">
+              <a href="../public/Omar-Sabry-CV.pdf" className='w-full h-full block' download="Omar-Sabry-CV.pdf">
                 Download cv
               </a>
             </motion.button>
