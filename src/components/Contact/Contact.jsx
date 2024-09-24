@@ -42,7 +42,6 @@ export default function Contact() {
 
     window.location.href = mailtoLink;
   };
-
   const sendWhatsAppMessage = () => {
     const phoneNumber = '+201286183936';
     const message = 'Hello, I would like to get in touch!';
@@ -50,13 +49,15 @@ export default function Contact() {
 
     window.open(whatsappLink, '_blank');
   };
+
+
   return (
     <>
 
 
       <div className='bg-[#030714fb] min-h-lvh relative z-5'>
-        
-        <motion.div initial={{scale:0.8, opacity:0}} animate={{opacity:1,scale:1}} transition={{duration:0.7}} className='w-[80%]  mx-auto overflow-hidden max-md:w-[90%]'>
+
+        <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7 }} className='w-[80%]  mx-auto overflow-hidden max-md:w-[90%]'>
           <h2 className='mt-32 text-5xl text-center font-bold text-white'>Contact <span className='text-[#FFC400]'>Us</span></h2>
 
           <form className='w-[90%] mx-auto' onSubmit={formik.handleSubmit}>
