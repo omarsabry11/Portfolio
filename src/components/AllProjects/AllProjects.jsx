@@ -2,13 +2,13 @@ import React, { useEffect } from 'react'
 import HtmlProjects from '../HtmlProjects/HtmlProjects'
 import JsProjects from '../JsProjects/JsProjects'
 import ReactProjects from '../ReactProjects/ReactProjects'
-import Todo from "../../assets/imgs/Todo.png"
-import Fokir from "../../assets/imgs/Fokir.png"
-import Kasber from "../../assets/imgs/Kasber.png"
-import Template3 from "../../assets/imgs/Template3.png"
-import XO from "../../assets/imgs/XO.png"
-import GameReviwes from "../../assets/imgs/GameReviwes.png"
-import Weather from "../../assets/imgs/Weather.png"
+import Todo from "../../assets/imgs/Todo.webp"
+import Fokir from "../../assets/imgs/Fokir.webp"
+import Kasber from "../../assets/imgs/Kasber.webp"
+import Template3 from "../../assets/imgs/Template3.webp"
+import XO from "../../assets/imgs/XO.webp"
+import GameReviwes from "../../assets/imgs/GameReviwes.webp"
+import Weather from "../../assets/imgs/Weather.webp"
 import { motion } from 'framer-motion'
 
 

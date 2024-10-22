@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
-import HomeImage from "../../assets/imgs/Background.jpg"
-import HomeImage2 from "../../assets/imgs/Group 1.png"
-import HomeImage3 from "../../assets/imgs/Group 2.png"
-import About from '../About/About'
+
+import HomeImage3 from "../../assets/imgs/Group 2.webp"
+
 import { Link } from 'react-router-dom'
 import Particle from '../Particle'
 import { delay, motion } from 'framer-motion';

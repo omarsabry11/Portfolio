@@ -1,8 +1,8 @@
 import React from 'react'
 import aboutImage from "../../assets/imgs/aboutImage.png"
 import Particle from '../Particle'
-import HomeImage2 from "../../assets/imgs/Group 1.png"
-import HomeImage3 from "../../assets/imgs/Group 2.png"
+import HomeImage2 from "../../assets/imgs/Group 1.webp"
+
 import { delay, motion, stagger } from 'framer-motion'
 
 

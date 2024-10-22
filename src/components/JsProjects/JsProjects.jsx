@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import XO from "../../assets/imgs/XO.png"
-import GameReviwes from "../../assets/imgs/GameReviwes.png"
-import Weather from "../../assets/imgs/Weather.png"
+import XO from "../../assets/imgs/XO.webp"
+import GameReviwes from "../../assets/imgs/GameReviwes.webp"
+import Weather from "../../assets/imgs/Weather.webp"
 import { motion } from 'framer-motion'
 
 

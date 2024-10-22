@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Fokir from "../../assets/imgs/Fokir.png"
-import Kasber from "../../assets/imgs/Kasber.png"
-import Template3 from "../../assets/imgs/Template3.png"
+import Fokir from "../../assets/imgs/Fokir.webp"
+import Kasber from "../../assets/imgs/Kasber.webp"
+import Template3 from "../../assets/imgs/Template3.webp"
 import { motion } from 'framer-motion'
 
 

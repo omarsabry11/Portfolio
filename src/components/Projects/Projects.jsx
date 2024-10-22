@@ -3,8 +3,8 @@ import Particle from '../Particle'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import Card3D from '../Card3D/Card3D'
 import "../Card3D/Card3D.css"
-import XO from "../../assets/imgs/XO.png"
-import Fokir from "../../assets/imgs/Fokir.png"
+
+
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { div } from 'three/webgpu'
 import style from "./Projects.module.css"
