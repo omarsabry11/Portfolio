@@ -1,12 +1,11 @@
 import React from 'react';
 import Particle from '../Particle'
-import Earth from '../Earth/Earth';
 import tailwindLogo from "../../assets/imgs/TailwindLogo.png"
 import JQueryLogo from "../../assets/imgs/JQueryLogo.png"
 import TypescriptIcono from "../../assets/imgs/TypescriptIcon.svg"
 import CPlusIcon from "../../assets/imgs/CPlus.png"
 import { motion } from 'framer-motion';
-// import { MovingBorder } from '../ui/moving-border';
+
 
 
 

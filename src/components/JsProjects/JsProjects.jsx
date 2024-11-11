@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import XO from "../../assets/imgs/XO.webp"
 import GameReviwes from "../../assets/imgs/GameReviwes.webp"
 import Weather from "../../assets/imgs/Weather.webp"
@@ -26,7 +25,7 @@ export default function JsProjects() {
   return (<>
     <div className='z-30 relative'>
     
-      <motion.div initial={{opacity:0,scale:0.8}} animate={{opacity:1,scale:1}} transition={{duration:0.5,delay:0.1}} className='flex flex-wrap justify-start items-center'>
+      <motion.div initial={{opacity:0,scale:0.9}} animate={{opacity:1,scale:1}} transition={{duration:0.3}} className='flex flex-wrap justify-start items-center'>
         {images.map((img, index) =>
 
           <div key={index} className='w-1/3 p-3 max-lg:w-1/2 max-md:w-full'>

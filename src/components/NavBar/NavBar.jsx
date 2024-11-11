@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import HomeImage2 from "../../assets/imgs/Group 1.webp"
 
 import style from "./NavBar.module.css"

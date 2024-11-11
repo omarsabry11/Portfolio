@@ -1,20 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Particle from '../Particle'
-import { Link, NavLink, Outlet } from 'react-router-dom'
-import Card3D from '../Card3D/Card3D'
-import "../Card3D/Card3D.css"
-
-
-import { motion, useMotionValue, useTransform } from "framer-motion";
-import { div } from 'three/webgpu'
+import { motion} from "framer-motion";
 import style from "./Projects.module.css"
+import AllProjects from '../AllProjects/AllProjects'
+import HtmlProjects from '../HtmlProjects/HtmlProjects'
+import JsProjects from '../JsProjects/JsProjects'
+import ReactProjects from '../ReactProjects/ReactProjects'
 
 
 
 
 export default function Projects() {
 
-  const [selected, setSelected] = useState("all")
+  const [selected, setSelected] = useState("all");
+
+
 
 
   return (<>
@@ -35,31 +35,31 @@ export default function Projects() {
         <ul className='flex justify-center items-center gap-10 flex-wrap max-md:gap-4'>
           <motion.button whileTap={{ scale: 0.85 }}>
             <li  className={` text-lg font-semibold rounded-xl overflow-hidden`}>
-              <Link onClick={()=>setSelected('all')}  className={`${selected=='all'?style.active:''} block projects-nav px-6 py-2 border-[2px] border-[#8C5EF6] duration-300 hover:bg-[#FFC400] hover:border-[#FFC400]`}  to="" >
+              <a href='#all' onClick={()=>{setSelected('all')}}  className={`${selected=='all'?style.active:''} block projects-nav px-6 py-2 border-[2px] border-[#8C5EF6] duration-300 hover:bg-[#FFC400] hover:border-[#FFC400]`}   >
                 All
-              </Link>
+              </a>
             </li>
           </motion.button>
           <motion.button whileTap={{ scale: 0.85 }}>
             <li  className={`text-lg font-semibold rounded-xl overflow-hidden`}>
-              <Link onClick={()=>setSelected('html')}   className={`${selected=='html'?style.active:''} block projects-nav  px-6 py-2 border-[2px] border-[#8C5EF6] duration-300 hover:bg-[#FFC400] hover:border-[#FFC400] `}  to="html-css"  >
+              <a href='#html&css' onClick={()=>setSelected('html')}   className={`${selected=='html'?style.active:''} block projects-nav  px-6 py-2 border-[2px] border-[#8C5EF6] duration-300 hover:bg-[#FFC400] hover:border-[#FFC400] `}    >
                 Html / Css
-              </Link>
+              </a>
             </li>
           </motion.button>
 
           <motion.button whileTap={{ scale: 0.85 }}>
             <li  className={` text-lg font-semibold  rounded-xl overflow-hidden`}>
-              <Link onClick={()=>setSelected('js')} className={`${selected=='js'?style.active:''} block projects-nav px-6 py-2 border-[2px] border-[#8C5EF6] duration-300 hover:bg-[#FFC400] hover:border-[#FFC400] `}  to="js"  >
+              <a href='#js' onClick={()=>setSelected('js')} className={`${selected=='js'?style.active:''} block projects-nav px-6 py-2 border-[2px] border-[#8C5EF6] duration-300 hover:bg-[#FFC400] hover:border-[#FFC400] `}    >
                 Js
-              </Link>
+              </a>
             </li>
           </motion.button>
           <motion.button whileTap={{ scale: 0.85 }}>
             <li  className={` text-lg font-semibold rounded-xl overflow-hidden`}>
-              <Link onClick={()=>setSelected('react')} className={`${selected=='react'?style.active:''} block projects-nav px-6 py-2 border-[2px] border-[#8C5EF6] duration-300 hover:bg-[#FFC400] hover:border-[#FFC400] `} to="react js"  >
+              <a href='#react' onClick={()=>setSelected('react')} className={`${selected=='react'?style.active:''} block projects-nav px-6 py-2 border-[2px] border-[#8C5EF6] duration-300 hover:bg-[#FFC400] hover:border-[#FFC400] `}   >
                 React Js
-              </Link>
+              </a>
             </li>
           </motion.button>
         </ul>
@@ -67,11 +67,14 @@ export default function Projects() {
 
     
 
-        <div className='mt-12'>
-          
-          <Outlet></Outlet>
-          
-        </div>
+        
+
+
+        {selected == "all" ? <AllProjects></AllProjects>:null}
+        {selected == "html" ? <HtmlProjects></HtmlProjects>:null}
+        {selected == "js" ? <JsProjects></JsProjects>:null}
+        {selected == "react" ? <ReactProjects></ReactProjects>:null}
+
 
 
 

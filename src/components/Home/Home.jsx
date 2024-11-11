@@ -1,12 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
-
 import HomeImage3 from "../../assets/imgs/Group 2.webp"
-
 import { Link } from 'react-router-dom'
 import Particle from '../Particle'
-import { delay, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect/dist/core';
-import { Cursor, useTypewriter } from 'react-simple-typewriter'
+
 
 
 
