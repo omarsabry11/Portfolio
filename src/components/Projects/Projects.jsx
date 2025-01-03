@@ -21,18 +21,14 @@ export default function Projects() {
 
 
     <div className='opacity-85'>
-
       <Particle></Particle>
-
     </div>
 
 
 
     <div className='min-h-lvh bg-[#030714fb] overflow-auto'>
       <div className='w-[80%] max-sm:w-[90%] mx-auto mt-32 text-white h-full'>
-
-
-        <ul className='flex justify-center items-center gap-10 flex-wrap max-md:gap-4'>
+        <ul className='flex justify-center items-center gap-10 flex-wrap max-md:gap-4 mb-5'>
           <motion.button whileTap={{ scale: 0.85 }}>
             <li  className={` text-lg font-semibold rounded-xl overflow-hidden`}>
               <a href='#all' onClick={()=>{setSelected('all')}}  className={`${selected=='all'?style.active:''} block projects-nav px-6 py-2 border-[2px] border-[#8C5EF6] duration-300 hover:bg-[#FFC400] hover:border-[#FFC400]`}   >
@@ -63,12 +59,6 @@ export default function Projects() {
             </li>
           </motion.button>
         </ul>
-
-
-    
-
-        
-
 
         {selected == "all" ? <AllProjects></AllProjects>:null}
         {selected == "html" ? <HtmlProjects></HtmlProjects>:null}

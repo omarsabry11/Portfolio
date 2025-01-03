@@ -43,7 +43,7 @@ export default function About() {
     <div id='about' className='min-h-lvh bg-[#030714fb] flex items-center'>
       <div className='about w-[80%] max-md:w-[95%] mx-auto text-white overflow-hidden z-10 relative pb-1'>
 
-        <h2 className='text-center text-5xl font-bold mt-20 max-xl:mt-36'>About<span className='text-[#FFC400] font-extrabold'>ME</span> </h2>
+        <h2 className='text-center text-5xl font-bold mt-20 max-xl:mt-36'>About<span className='text-[#FFC400] font-extrabold'> ME</span> </h2>
 
         <div className='flex mt-12 justify-between items-center max-xl:flex-col max-xl:gap-14 max-xl:items-center'>
 

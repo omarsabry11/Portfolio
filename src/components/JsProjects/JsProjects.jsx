@@ -1,6 +1,6 @@
 import React from 'react'
 import XO from "../../assets/imgs/XO.webp"
-import GameReviwes from "../../assets/imgs/GameReviwes.webp"
+import GameReviwes from "../../assets/imgs/GameReviews.webp"
 import Weather from "../../assets/imgs/Weather.webp"
 import { motion } from 'framer-motion'
 

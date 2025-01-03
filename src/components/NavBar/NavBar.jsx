@@ -15,30 +15,6 @@ export default function NavBar() {
   };
   document.documentElement.classList.add("dark");
 
-  // const [theme, setTheme] = useState("light");
-
-  // useEffect(() => {
-
-  //   const savedTheme = localStorage.getItem("theme") || "light";
-  //   setTheme(savedTheme);
-
-  //   if (savedTheme === "dark") {
-  //     document.documentElement.classList.add("dark");
-  //   } else {
-  //     document.documentElement.classList.remove("dark");
-  //   }
-  // }, []);
-
-  // const toggleTheme = () => {
-  //   const newTheme = theme === "light" ? "dark" : "light";
-  //   setTheme(newTheme);
-  //   if (newTheme === "dark") {
-  //     document.documentElement.classList.add("dark");
-  //   } else {
-  //     document.documentElement.classList.remove("dark");
-  //   }
-  //   localStorage.setItem("theme", newTheme); 
-  // };
 
   return (
     <div className={`dark:bg-[#030714] bg-gray-100 shadow-lg fixed top-0 start-0 end-0 py-3 z-50 max-md:py-5`} >
@@ -65,21 +41,6 @@ export default function NavBar() {
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
           </svg>
         </button>
-
-        {/* <button
-          className="px-4 py-2 rounded-md focus:outline-none bg-gray-200 dark:bg-gray-800 dark:text-white"
-          onClick={toggleTheme}
-
-        >
-          Switch to {theme === "light" ? "Dark" : "Light"} Mode
-        </button> */}
-
-
-
-
-
-
-
 
         <ul className={`md:flex items-center text-[#070B18] dark:text-white gap-6 hidden ${isMenuOpen ? 'block' : 'hidden'} mt-4 md:mt-0`}>
           <li>

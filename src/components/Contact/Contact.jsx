@@ -56,7 +56,7 @@ export default function Contact() {
           className="w-[80%]  mx-auto overflow-hidden max-md:w-[90%]"
         >
           <h2 className="mt-32 text-5xl text-center font-bold text-white">
-            Contact <span className="text-[#FFC400]">Us</span>
+            Contact <span className="text-[#FFC400]">US</span>
           </h2>
 
           <form className="w-[90%] mx-auto" onSubmit={formik.handleSubmit}>
