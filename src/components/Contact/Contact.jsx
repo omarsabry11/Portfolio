@@ -8,6 +8,26 @@ import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 
 export default function Contact() {
+
+  const sendInfo = (formData) => {
+
+    emailjs
+      .send(
+        "service_safeanu", // EmailJS Service ID
+        "template_ialf9sc", // EmailJS Template ID
+        formData,
+        "cG2v3tJaBfD6wJJio" // EmailJS Public Key
+      )
+      .then(
+        (result) => {
+          toast.success("Message sent successfully!")
+          formik.resetForm();
+        },
+        (error) => {
+          console.error("Failed to send message:", error);
+        }
+      );
+  };
   let validation = Yup.object().shape({
     name: Yup.string().required("."),
     email: Yup.string().required("."),
@@ -24,29 +44,10 @@ export default function Contact() {
     },
 
     validationSchema: validation,
+    onSubmit:sendInfo
   });
   const notifyFilled = () => toast.error("Please fill all fields");
-
-  const sendInfo = (e) => {
-
-    emailjs
-      .send(
-        "service_safeanu", // EmailJS Service ID
-        "template_ialf9sc", // EmailJS Template ID
-        formik,
-        "cG2v3tJaBfD6wJJio" // EmailJS Public Key
-      )
-      .then(
-        (result) => {
-          toast.success("Message sent successfully!")
-          formik.resetForm();
-        },
-        (error) => {
-          console.error("Failed to send message:", error);
-        }
-      );
-  };
-
+  
   const sendEmail = () => {
     const recipient = "omarsabry425@gmail.com";
     const subject = "Subject of your email";
@@ -185,7 +186,7 @@ export default function Contact() {
                         !formik.touched.phone ||
                         !formik.touched.message
                           ? notifyFilled()
-                          : sendInfo();
+                          : null;
                       }
                     }}
                     className="bg-[#662eea] text-white font-semibold text-lg rounded-full w-full py-2 duration-300 hover:bg-[#FFC400]"
