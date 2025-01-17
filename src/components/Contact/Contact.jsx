@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import * as Yup from "yup";
+import emailjs from "emailjs-com";
 
 import { motion } from "framer-motion";
 
@@ -14,7 +15,7 @@ export default function Contact() {
     message: Yup.string().required("."),
   });
 
-  let formik = useFormik({
+  const formik = useFormik({
     initialValues: {
       name: "",
       email: "",
@@ -25,6 +26,26 @@ export default function Contact() {
     validationSchema: validation,
   });
   const notifyFilled = () => toast.error("Please fill all fields");
+
+  const sendInfo = (e) => {
+
+    emailjs
+      .send(
+        "service_safeanu", // EmailJS Service ID
+        "template_ialf9sc", // EmailJS Template ID
+        formik,
+        "cG2v3tJaBfD6wJJio" // EmailJS Public Key
+      )
+      .then(
+        (result) => {
+          toast.success("Message sent successfully!")
+          formik.resetForm();
+        },
+        (error) => {
+          console.error("Failed to send message:", error);
+        }
+      );
+  };
 
   const sendEmail = () => {
     const recipient = "omarsabry425@gmail.com";
@@ -93,7 +114,7 @@ export default function Contact() {
                       onBlur={formik.handleBlur}
                       value={formik.values.email}
                       className="block px-2.5 pb-2.5 pt-4 w-full text-md text-white bg-[#8c5ef608] rounded-lg border-[3px] border-[#8C5EF5] appearance-none focus:outline-none focus:ring-0 focus:border-[#FFC400] peer"
-                      placeholder=" "
+                      placeholder=""
                     />
                     <label
                       htmlFor="email"
@@ -114,7 +135,7 @@ export default function Contact() {
                       onBlur={formik.handleBlur}
                       value={formik.values.phone}
                       className="block px-2.5 pb-2.5 pt-4 w-full text-md text-white bg-[#8c5ef608] rounded-lg border-[3px] border-[#8C5EF5] appearance-none focus:outline-none focus:ring-0 focus:border-[#FFC400] peer"
-                      placeholder=" "
+                      placeholder=""
                     />
                     <label
                       htmlFor="phone"
@@ -137,7 +158,7 @@ export default function Contact() {
                       onBlur={formik.handleBlur}
                       value={formik.values.message}
                       className="block px-2.5 pb-36 pt-4 w-full text-md text-white bg-[#8c5ef608] rounded-lg border-[3px] border-[#8C5EF5] appearance-none focus:outline-none focus:ring-0 focus:border-[#FFC400] peer"
-                      placeholder=" "
+                      placeholder=""
                     />
                     <label
                       htmlFor="message"
@@ -164,7 +185,7 @@ export default function Contact() {
                         !formik.touched.phone ||
                         !formik.touched.message
                           ? notifyFilled()
-                          : null;
+                          : sendInfo();
                       }
                     }}
                     className="bg-[#662eea] text-white font-semibold text-lg rounded-full w-full py-2 duration-300 hover:bg-[#FFC400]"

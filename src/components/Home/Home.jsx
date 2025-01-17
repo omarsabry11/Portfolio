@@ -5,17 +5,7 @@ import Particle from '../Particle'
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect/dist/core';
 
-
-
-
-
-
-
-
 export default function Home() {
-
-
-
 
   const typewriterRef = useRef(null);
 
@@ -28,19 +18,9 @@ export default function Home() {
         autoStart: true,
         loop: true,
         delay: 100
-
-
       });
     }
   }, []);
-
-
-
-
-
-
-
-
 
   return (<>
 
@@ -58,12 +38,9 @@ export default function Home() {
         <motion.div initial={{ x: -250, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.7 }} className='w-[55%] max-lg:order-1 max-lg:w-[90%]'>
           <div className='text-5xl max-lg:justify-center font-[800] tracking-wider py-6 flex items-center gap-2'>
 
-            <h1 className=' dark:text-[#8C5EF6] text-[#6032cc]' ref={typewriterRef}></h1>
+            <h1 className=' dark:text-[#8C5EF6] text-[#6032cc]'ref={typewriterRef}></h1>
 
           </div>
-
-
-
 
           <p className='pb-4 text-lg leading-9 home-text dark:text-white text-black font-semibold dark:font-normal'>As a skilled web developer, I specialize in creating dynamic and responsive websites tailored to meet your unique needs. With expertise in front-end technology, I deliver solutions that enhance user experience and drive business results.</p>
 
@@ -78,16 +55,12 @@ export default function Home() {
 
 
             <motion.button whileTap={{ scale: 0.85 }} className='text-[1.1rem] duration-[0.4s] dark:hover:bg-[#FFC400] dark:hover:border-[#FFC400] hover:bg-[#040814] hover:text-white dark:hover:text-white border-[3px] border-[#060A16] text-[#060A16] dark:border-[#FFC400] dark:text-[#FFC400] px-7 py-2 rounded-full font-semibold'>
-              <a href="../public/Omar-Sabry-CV.pdf" className='w-full h-full block' download="Omar-Sabry-CV.pdf">
+              <a href="Omar-Sabry-CV.pdf" className='w-full h-full block' download="Omar-Sabry-CV.pdf">
                 Download cv
               </a>
             </motion.button>
 
-
-
-
           </div>
-
 
         </motion.div>
         <motion.div initial={{ x: 250, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.7 }} className='w-[35%] max-lg:w-[65%]'>
