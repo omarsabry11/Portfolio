@@ -24,9 +24,9 @@ export default function Skills() {
 
 
     <div className='min-h-lvh bg-[#030714fb] overflow-hidden text-white'>
-      <motion.div initial={{scale:0.8, opacity:0}} animate={{opacity:1,scale:1}} transition={{duration:0.7}} className='w-[70%] mx-auto mt-28'>
-        <h2 className='text-center text-5xl font-bold tracking-wider moving-border'>Skills</h2>
-        <div className='flex flex-wrap justify-start items-center text-center mt-16'>
+        <h2 className='text-center text-5xl font-bold tracking-wider moving-border mt-28'>Skills</h2>
+      <motion.div initial={{scale:0.8, opacity:0}} animate={{opacity:1,scale:1}} transition={{duration:0.7}} className='w-[70%] mx-auto'>
+        <div className='flex flex-wrap justify-start items-center text-center mt-14'>
 
 
           <div className='w-1/5 max-sm:w-full max-md:w-1/2  max-lg:w-1/3 max-xl:w-1/4 min-xxl:w-1/5 px-5 py-3 '>

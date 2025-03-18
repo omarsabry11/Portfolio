@@ -1,16 +1,14 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useFormik } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import * as Yup from "yup";
 import emailjs from "emailjs-com";
-
 import { motion } from "framer-motion";
+import Particle from "../Particle";
 
 export default function Contact() {
-
   const sendInfo = (formData) => {
-
     emailjs
       .send(
         "service_safeanu", // EmailJS Service ID
@@ -20,7 +18,7 @@ export default function Contact() {
       )
       .then(
         (result) => {
-          toast.success("Message sent successfully!")
+          toast.success("Message sent successfully!");
           formik.resetForm();
         },
         (error) => {
@@ -44,10 +42,10 @@ export default function Contact() {
     },
 
     validationSchema: validation,
-    onSubmit:sendInfo
+    onSubmit: sendInfo,
   });
   const notifyFilled = () => toast.error("Please fill all fields");
-  
+
   const sendEmail = () => {
     const recipient = "omarsabry425@gmail.com";
     const subject = "Subject of your email";
@@ -68,19 +66,27 @@ export default function Contact() {
     window.open(whatsappLink, "_blank");
   };
 
+  const getParticles = useMemo(
+    () => (
+      <div className="opacity-70">
+        <Particle></Particle>
+      </div>
+    ),
+    []
+  );
   return (
     <>
-      <div className="bg-[#030714fb] min-h-lvh relative z-5">
+      <div className="bg-[#030714fb] min-h-lvh relative z-5 overflow-auto">
+        {getParticles}
+        <h2 className="mt-32 text-5xl text-center font-bold text-white">
+          Contact <span className="text-[#FFC400]">US</span>
+        </h2>
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7 }}
           className="w-[80%]  mx-auto overflow-hidden max-md:w-[90%]"
         >
-          <h2 className="mt-32 text-5xl text-center font-bold text-white">
-            Contact <span className="text-[#FFC400]">US</span>
-          </h2>
-
           <form className="w-[90%] mx-auto" onSubmit={formik.handleSubmit}>
             <div className="mt-20 flex flex-col gap-10">
               <div className="flex justify-between flex-wrap max-lg:gap-y-10">
@@ -176,18 +182,12 @@ export default function Contact() {
                   <button
                     type="submit"
                     onClick={() => {
-                      {
-                        formik.errors.name ||
-                        formik.errors.email ||
-                        formik.errors.phone ||
-                        formik.errors.message ||
-                        !formik.touched.name ||
-                        !formik.touched.email ||
-                        !formik.touched.phone ||
-                        !formik.touched.message
-                          ? notifyFilled()
-                          : null;
-                      }
+                      formik.errors.name ||
+                      formik.errors.email ||
+                      formik.errors.phone ||
+                      formik.errors.message
+                        ? notifyFilled()
+                        : null;
                     }}
                     className="bg-[#662eea] text-white font-semibold text-lg rounded-full w-full py-2 duration-300 hover:bg-[#FFC400]"
                   >

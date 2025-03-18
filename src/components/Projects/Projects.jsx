@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import Particle from "../Particle";
 import { motion } from "framer-motion";
 import style from "./Projects.module.css";
@@ -12,9 +12,24 @@ import Weather from "../../assets/imgs/Weather.webp";
 import Ecommerse from "../../assets/imgs/Ecommerse.webp";
 import SolarCompany from "../../assets/imgs/SolarCompany.webp";
 import VivaDecor from "../../assets/imgs/VivaDecor.webp";
+import BookMarker from "../../assets/imgs/BookMarker.webp";
+import FreshCartAngular from "../../assets/imgs/fresh-cart-angular.webp"
+import FoodRecipes from "../../assets/imgs/food-recipes.webp"
 
-export default function Projects() {
+let isFirstRender = true;
+
+function Projects() {
   const projects = [
+    {
+      src: FoodRecipes,
+      link: "https://food-recipes-qbui22rlp-omarsabry11s-projects.vercel.app/",
+      type: "angular",
+    },
+    {
+      src: FreshCartAngular,
+      link: "https://fresh-cart-angular-three.vercel.app/",
+      type: "angular",
+    },
     {
       src: Ecommerse,
       link: "https://fresh-cart-pi-orcin.vercel.app/",
@@ -34,6 +49,11 @@ export default function Projects() {
     {
       src: Weather,
       link: "https://omarsabry11.github.io/Weather/",
+      type: "js",
+    },
+    {
+      src: BookMarker,
+      link: "https://omarsabry11.github.io/Bookmarker/",
       type: "js",
     },
     {
@@ -61,7 +81,7 @@ export default function Projects() {
 
   const [selected, setSelected] = useState("all");
 
-  function getProjects() {
+  const getProjects = useMemo(() => {
     if (selected == "all") {
       return projects;
     } else {
@@ -70,23 +90,35 @@ export default function Projects() {
       );
       return filteredProjects;
     }
-  }
+  }, [selected]);
 
-  const tabsName = ["All", "Html / Css", "Js", "React Js"];
-  return (
-    <>
+  const getParticles = useMemo(
+    () => (
       <div className="opacity-85">
         <Particle></Particle>
       </div>
+    ),
+    []
+  );
+
+  useEffect(() => {
+    if (isFirstRender) {
+      isFirstRender = false;
+    }
+  }, []);
+
+  const tabsName = ["All", "Html / Css", "Js", "React Js", "Angular"];
+  return (
+    <>
+      {getParticles}
 
       <div className="min-h-lvh bg-[#030714fb] overflow-auto">
         <div className="w-[80%] max-sm:w-[90%] mx-auto mt-32 text-white h-full">
           <ul className="flex justify-center items-center gap-10 flex-wrap max-md:gap-4 mb-5">
-            {["all", "html", "js", "react"].map((type, index) => (
-              <motion.button whileTap={{ scale: 0.85 }}>
-                
+            {["all", "html", "js", "react", "angular"].map((type, index) => (
+              <motion.button whileTap={{ scale: 0.85 }} key={index}>
                 <li
-                  className={` text-lg font-semibold rounded-xl overflow-hidden`}
+                  className={`text-lg font-semibold rounded-xl overflow-hidden`}
                 >
                   <a
                     href={`#${type}`}
@@ -104,13 +136,13 @@ export default function Projects() {
 
           <div className="z-30 relative">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={isFirstRender ? { opacity: 0, scale: 0.9 } : {}}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
-              key={selected}
+              // key={selected}
               className="flex flex-wrap justify-start items-center"
             >
-              {getProjects().map((project, index) => (
+              {getProjects.map((project, index) => (
                 <div
                   key={index}
                   className="w-1/3 p-3 max-lg:w-1/2 max-md:w-full"
@@ -133,3 +165,5 @@ export default function Projects() {
     </>
   );
 }
+
+export default React.memo(Projects);
