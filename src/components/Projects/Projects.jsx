@@ -13,13 +13,31 @@ import Ecommerse from "../../assets/imgs/Ecommerse.webp";
 import SolarCompany from "../../assets/imgs/SolarCompany.webp";
 import VivaDecor from "../../assets/imgs/VivaDecor.webp";
 import BookMarker from "../../assets/imgs/BookMarker.webp";
-import FreshCartAngular from "../../assets/imgs/fresh-cart-angular.webp"
-import FoodRecipes from "../../assets/imgs/food-recipes.webp"
+import FreshCartAngular from "../../assets/imgs/fresh-cart-angular.webp";
+import FoodRecipes from "../../assets/imgs/food-recipes.webp";
+import Acm from "../../assets/imgs/acm.webp";
+import Shoppeto from "../../assets/imgs/Shopetto.webp";
 
 let isFirstRender = true;
 
 function Projects() {
   const projects = [
+    {
+      src: Shoppeto,
+      link: "https://shopetto.vercel.app/",
+      type: "react",
+    },
+    {
+      src: Acm,
+      link: "https://taskstream.alex.hosting.acm.org/",
+      type: "react",
+    },
+    { src: XO, link: "https://omarsabry11.github.io/XO-Game/", type: "js" },
+    {
+      src: Todo,
+      link: "https://todo-list-app-git-master-omarsabry11s-projects.vercel.app/",
+      type: "react",
+    },
     {
       src: FoodRecipes,
       link: "https://food-recipes-qbui22rlp-omarsabry11s-projects.vercel.app/",
@@ -30,17 +48,7 @@ function Projects() {
       link: "https://fresh-cart-angular-three.vercel.app/",
       type: "angular",
     },
-    {
-      src: Ecommerse,
-      link: "https://fresh-cart-pi-orcin.vercel.app/",
-      type: "react",
-    },
-    {
-      src: Todo,
-      link: "https://todo-list-app-git-master-omarsabry11s-projects.vercel.app/",
-      type: "react",
-    },
-    { src: XO, link: "https://omarsabry11.github.io/XO-Game/", type: "js" },
+
     {
       src: GameReviwes,
       link: " https://omarsabry11.github.io/Game-Reviews/",
@@ -107,14 +115,14 @@ function Projects() {
     }
   }, []);
 
-  const tabsName = ["All", "Html / Css", "Js", "React Js", "Angular"];
+  const tabsName = ["All", "Html | Css", "Js", "React | Next Js", "Angular"];
   return (
     <>
       {getParticles}
 
-      <div className="min-h-lvh bg-[#030714fb] overflow-auto">
+      <section className="min-h-lvh bg-[#030714fb] overflow-auto">
         <div className="w-[80%] max-sm:w-[90%] mx-auto mt-32 text-white h-full">
-          <ul className="flex justify-center items-center gap-10 flex-wrap max-md:gap-4 mb-5">
+          <ul className="flex justify-center items-center gap-10 flex-wrap max-md:gap-4 ">
             {["all", "html", "js", "react", "angular"].map((type, index) => (
               <motion.button whileTap={{ scale: 0.85 }} key={index}>
                 <li
@@ -134,23 +142,19 @@ function Projects() {
             ))}
           </ul>
 
-          <div className="z-30 relative">
+          <div className="z-30 relative py-10">
             <motion.div
               initial={isFirstRender ? { opacity: 0, scale: 0.9 } : {}}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
-              // key={selected}
-              className="flex flex-wrap justify-start items-center"
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-center"
             >
               {getProjects.map((project, index) => (
-                <div
-                  key={index}
-                  className="w-1/3 p-3 max-lg:w-1/2 max-md:w-full"
-                >
-                  <div className="p-2 rounded-lg hover:scale-110 duration-300">
+                <div key={index}>
+                  <div className="rounded-lg hover:scale-105 duration-200 h-[200px]">
                     <a target="_blank" href={project.link}>
                       <img
-                        className="rounded-lg "
+                        className="rounded-lg  w-full h-full"
                         src={project.src}
                         alt="project"
                       />
@@ -161,7 +165,7 @@ function Projects() {
             </motion.div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

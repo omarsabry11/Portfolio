@@ -1,17 +1,15 @@
-import React from 'react'
-import NavBar from '../NavBar/NavBar'
+import React from "react";
+import NavBar from "../NavBar/NavBar";
 
-import { Outlet } from 'react-router-dom'
-
-
-
+import { Outlet } from "react-router-dom";
 
 export default function LayOut() {
-  return (<>
-  <NavBar></NavBar>
-  <Outlet></Outlet>
-
-  </>
-    
-  )
+  return (
+    <>
+      <div className="flex flex-col">
+        <NavBar></NavBar>
+        <Outlet></Outlet>
+      </div>
+    </>
+  );
 }

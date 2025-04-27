@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useFormik } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -6,14 +6,18 @@ import * as Yup from "yup";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 import Particle from "../Particle";
+import { useState } from "react";
+import DotsLoader from "../DotsLoader/DotsLoader";
 
 export default function Contact() {
-  const sendInfo = (formData) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const sendInfo = (values) => {
+    setIsLoading(true);
     emailjs
       .send(
         "service_safeanu", // EmailJS Service ID
         "template_ialf9sc", // EmailJS Template ID
-        formData,
+        values,
         "cG2v3tJaBfD6wJJio" // EmailJS Public Key
       )
       .then(
@@ -24,13 +28,16 @@ export default function Contact() {
         (error) => {
           console.error("Failed to send message:", error);
         }
-      );
+      )
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
-  let validation = Yup.object().shape({
-    name: Yup.string().required("."),
-    email: Yup.string().required("."),
-    phone: Yup.string().required("."),
-    message: Yup.string().required("."),
+  const validation = Yup.object().shape({
+    name: Yup.string().required("Name is required"),
+    email: Yup.string().required("Email is required").email("Invalid email"),
+    phone: Yup.string().required("Phone is required"),
+    message: Yup.string().required("Message is required"),
   });
 
   const formik = useFormik({
@@ -44,7 +51,7 @@ export default function Contact() {
     validationSchema: validation,
     onSubmit: sendInfo,
   });
-  const notifyFilled = () => toast.error("Please fill all fields");
+  const notifyFilled = (msg) => toast.error(msg);
 
   const sendEmail = () => {
     const recipient = "omarsabry425@gmail.com";
@@ -74,6 +81,19 @@ export default function Contact() {
     ),
     []
   );
+
+  const handleShowErrors = async () => {
+    const errors = await formik.validateForm();
+    if (errors.name) {
+      notifyFilled(errors.name);
+    } else if (errors.email) {
+      notifyFilled(errors.email);
+    } else if (errors.phone) {
+      notifyFilled(errors.phone);
+    } else if (errors.message) {
+      notifyFilled(errors.message);
+    }
+  };
   return (
     <>
       <div className="bg-[#030714fb] min-h-lvh relative z-5 overflow-auto">
@@ -178,21 +198,13 @@ export default function Contact() {
               </div>
 
               <div className="px-3">
-                <motion.button className="w-full" whileTap={{ scale: 0.85 }}>
-                  <button
-                    type="submit"
-                    onClick={() => {
-                      formik.errors.name ||
-                      formik.errors.email ||
-                      formik.errors.phone ||
-                      formik.errors.message
-                        ? notifyFilled()
-                        : null;
-                    }}
-                    className="bg-[#662eea] text-white font-semibold text-lg rounded-full w-full py-2 duration-300 hover:bg-[#FFC400]"
-                  >
-                    Send
-                  </button>
+                <motion.button
+                  onClick={handleShowErrors}
+                  type="submit"
+                  className="bg-[#662eea] text-white font-semibold text-lg rounded-full w-full duration-300 hover:bg-[#FFC400] h-[3rem] flex justify-center items-center"
+                  whileTap={{ scale: 0.85 }}
+                >
+                  {isLoading ? <DotsLoader></DotsLoader> : "Send"}
                 </motion.button>
 
                 <ToastContainer
@@ -213,24 +225,22 @@ export default function Contact() {
         </motion.div>
 
         <div className=" text-white fixed end-0 top-1/2 -translate-y-1/2">
-          <motion.button whileTap={{ scale: 0.85 }}>
-            <button
-              onClick={sendEmail}
-              className=" text-[#E8D8A2] hover:scale-110  duration-300 "
-            >
-              <i className=" fa-regular fa-envelope fa-lg bg-[#8c5ef608] hover:border-[#FFC400]  w-14 hover:w-20 h-11  flex items-center ps-4 duration-300 border-e-0 border-[3px] border-[#662EEA]  text-[#662EEA] hover:text-[#FFC400] rounded-s-full "></i>{" "}
-            </button>
+          <motion.button
+            onClick={sendEmail}
+            className=" text-[#E8D8A2] hover:scale-110 duration-300 "
+            whileTap={{ scale: 0.85 }}
+          >
+            <i className=" fa-regular fa-envelope fa-lg bg-[#8c5ef608] hover:border-[#FFC400]  w-14 hover:w-20 h-11  flex items-center ps-4 duration-300 border-e-0 border-[3px] border-[#662EEA]  text-[#662EEA] hover:text-[#FFC400] rounded-s-full "></i>{" "}
           </motion.button>
         </div>
         <div className="text-white fixed mt-16 end-0 top-1/2 -translate-y-1/2">
-          <motion.button whileTap={{ scale: 0.85 }}>
-            <button
-              onClick={sendWhatsAppMessage}
-              className=" text-[#E8D8A2] hover:scale-110  duration-300 "
-            >
-              {" "}
-              <i className=" fa-brands fa-whatsapp bg-[#8c5ef608] fa-xl w-14 hover:w-20 h-11 flex items-center ps-4 hover:border-[#FFC400]  duration-300 border-e-0 border-[3px] border-[#662EEA] text-[#662EEA] hover:text-[#FFC400] rounded-s-full"></i>
-            </button>
+          <motion.button
+            onClick={sendWhatsAppMessage}
+            className=" text-[#E8D8A2] hover:scale-110  duration-300 "
+            whileTap={{ scale: 0.85 }}
+          >
+            {" "}
+            <i className=" fa-brands fa-whatsapp bg-[#8c5ef608] fa-xl w-14 hover:w-20 h-11 flex items-center ps-4 hover:border-[#FFC400]  duration-300 border-e-0 border-[3px] border-[#662EEA] text-[#662EEA] hover:text-[#FFC400] rounded-s-full"></i>
           </motion.button>
         </div>
       </div>

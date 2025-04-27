@@ -7,11 +7,6 @@ import CPlusIcon from "../../assets/imgs/CPlus.png"
 import { motion } from 'framer-motion';
 
 
-
-
-
-
-
 export default function Skills() {
   return (<>
 
@@ -75,7 +70,7 @@ export default function Skills() {
 
           <div className='w-1/5 max-sm:w-full max-md:w-1/2  max-lg:w-1/3 max-xl:w-1/4 min-xxl:w-1/5 px-5 py-3'>
             <div className=' border  bg-[#8c5ef608] py-12 rounded-2xl duration-300 hover:scale-110'>
-              <i class="fa-brands fa-js text-6xl text-[#ECDA1C]"></i>
+              <i className="fa-brands fa-js text-6xl text-[#ECDA1C]"></i>
 
             </div>
             <h3 className='pt-3 text-lg font-semibold tracking-wider'>Java script</h3>
@@ -83,7 +78,7 @@ export default function Skills() {
           </div>
           <div className='w-1/5 max-sm:w-full max-md:w-1/2  max-lg:w-1/3 max-xl:w-1/4 min-xxl:w-1/5 px-5 py-3'>
             <div className=' border  bg-[#8c5ef608] py-12 rounded-2xl duration-300 hover:scale-110 flex justify-center items-center'>
-              <img src={JQueryLogo} className='w-28 py-[1.2rem]' alt="" />
+              <img src={JQueryLogo} className='w-28 py-[1.2rem]' alt="JQuery Logo" />
             </div>
             <h3 className='pt-3 text-lg font-semibold tracking-wider'>JQuery</h3>
 
@@ -93,7 +88,7 @@ export default function Skills() {
 
           <div className='w-1/5 max-sm:w-full max-md:w-1/2  max-lg:w-1/3 max-xl:w-1/4 min-xxl:w-1/5 px-5 py-3'>
             <div className=' flex justify-center items-center border  bg-[#8c5ef608] rounded-2xl duration-300 hover:scale-110'>
-              <img src={TypescriptIcono} className='w-16 py-[3rem]' alt="" />
+              <img src={TypescriptIcono} className='w-16 py-[3rem]' alt="Typescript Icon" />
             </div>
             <h3 className='pt-3 text-lg font-semibold tracking-wider'>Type script</h3>
 
@@ -102,7 +97,7 @@ export default function Skills() {
 
           <div className='w-1/5 max-sm:w-full max-md:w-1/2  max-lg:w-1/3 max-xl:w-1/4 min-xxl:w-1/5 px-5 py-3'>
             <div className=' border  bg-[#8c5ef608] py-12 rounded-2xl duration-300 hover:scale-110 text-6xl'>
-              <i class="fa-brands fa-sass text-[#C76395]"></i>
+              <i className="fa-brands fa-sass text-[#C76395]"></i>
 
             </div>
             <h3 className='pt-3 text-lg font-semibold tracking-wider'>SASS</h3>
@@ -111,7 +106,7 @@ export default function Skills() {
           </div>
           <div className='w-1/5 max-sm:w-full max-md:w-1/2  max-lg:w-1/3 max-xl:w-1/4 min-xxl:w-1/5 px-5 py-3'>
             <div className=' border  bg-[#8c5ef608] py-12 rounded-2xl duration-300 hover:scale-110 text-6xl'>
-              <i class="fa-brands fa-react text-[#01D1F7]"></i>
+              <i className="fa-brands fa-react text-[#01D1F7]"></i>
 
             </div>
             <h3 className='pt-3 text-lg font-semibold tracking-wider'>React js</h3>
