@@ -66,9 +66,9 @@ export default function Home() {
                 className="text-[1.1rem] duration-[0.4s] dark:hover:bg-[#FFC400] dark:hover:border-[#FFC400] hover:bg-[#040814] hover:text-white dark:hover:text-white border-[3px] border-[#060A16] text-[#060A16] dark:border-[#FFC400] dark:text-[#FFC400]  w-[12rem] py-2 rounded-full font-semibold"
               >
                 <a
-                  href="Omar-Sabry-CV.pdf"
+                href="Omar Sabry Khalil_Frontend Engineer.pdf"
                   className="w-full h-full block"
-                  download="Omar-Sabry-CV.pdf"
+                  download="Omar Sabry Khalil_Frontend Engineer.pdf"
                 >
                   Download cv
                 </a>
